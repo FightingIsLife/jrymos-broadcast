@@ -1,8 +1,7 @@
-package cn.jrymos.broadcast.spi;
+## 基于mosquitto、mosquitto-auth-plug二次开发的一个带权限控制的广播服务，java api，需要spring支持
+[mosquitto服务](https://github.com/FightingIsLife/jrymos-mqtt)
 
-import java.util.List;
-
-
+```
 /**
  * 对外提供服务的广播器
  */
@@ -14,7 +13,7 @@ public interface BroadcasterService {
     void registerTopic(String topic, List<Server> servers);
 
     /**
-     * 给监听了topic的客户端广播一条message, 使用了合并写会有200ms左右的延迟
+     * 给监听了topic的客户端广播一条message
      */
     void broadcast(Message message);
 
@@ -30,3 +29,4 @@ public interface BroadcasterService {
     ListenInfo getListenInfo(String topic, String username);
 
 }
+```

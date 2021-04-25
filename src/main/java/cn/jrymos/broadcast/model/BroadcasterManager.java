@@ -242,7 +242,7 @@ public class BroadcasterManager implements Closeable {
             try {
                 executorService.awaitTermination(timeout, unit);
             } catch (InterruptedException e) {
-
+                log.warn("safe close interruptedException " + host + ":" + port);
             }
             if (executorService.isTerminated()) {
                 close();
