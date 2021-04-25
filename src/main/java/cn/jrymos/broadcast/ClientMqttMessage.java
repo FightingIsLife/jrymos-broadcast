@@ -13,6 +13,6 @@ public class ClientMqttMessage extends MqttMessage {
     }
 
     public static ClientMqttMessage of(String topic, byte[] bytes) {
-        ClientMqttMessage clientMqttMessage = new ClientMqttMessage(topic, bytes);
+        return new ClientMqttMessage(topic, bytes);
     }
 }
